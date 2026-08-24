@@ -214,7 +214,7 @@
             <div class="counter-container">
                 <div class="counter-circle" id="counterCircle">
                     <div class="counter-inner">
-                        <div class="counter-number" id="counterNumber">25</div>
+                        <div class="counter-number" id="counterNumber">45</div>
                         <div class="counter-label">segundos</div>
                     </div>
                 </div>
@@ -235,7 +235,7 @@
             'Validando Información'
         ];
 
-        let tiempoRestante = 25;
+        let tiempoRestante = 45;
         let indiceActual = 0;
 
         // Función para cambiar el título con animación
@@ -260,7 +260,7 @@
             numeroElement.textContent = tiempoRestante;
 
             // Calcular porcentaje para el gradient cónico
-            const porcentaje = ((25 - tiempoRestante) / 25) * 100;
+            const porcentaje = ((45 - tiempoRestante) / 45) * 100;
             circleElement.style.setProperty('--percentage', porcentaje + '%');
 
             // Cambiar color del contador según el tiempo
