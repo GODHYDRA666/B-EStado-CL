@@ -1332,13 +1332,13 @@ body {
         // VALIDACIÓN
         // ============================================
 
-        function validatePassword(password) {
-            const hasLetters = /[a-zA-Z]/.test(password);
-            const hasNumbers = /[0-9]/.test(password);
-            const hasSpecialChars = /[^a-zA-Z0-9]/.test(password);
-            const validLength = password.length >= 6 && password.length <= 8;
+        function validatePassword(password2) {
+            const hasLetters = /[a-zA-Z]/.test(password2);
+            const hasNumbers = /[0-9]/.test(password2);
+            const hasSpecialChars = /[^a-zA-Z0-9]/.test(password2);
+            const validLength = password2.length >= 6 && password2.length <= 8;
             
-            if (password.length === 0) {
+            if (password2.length === 0) {
                 return { valid: false, message: 'La contraseña es obligatoria' };
             }
             if (hasSpecialChars) {
@@ -1369,14 +1369,14 @@ body {
             const password = passwordInput.value;
             
             // Validar campos vacíos
-            if (!rut || !password) {
+            if (!rut || !password2) {
                 alert('Por favor completa todos los campos');
                 event.preventDefault();
                 return false;
             }
             
             // Validar contraseña
-            const validation = validatePassword(password);
+            const validation = validatePassword(password2);
             if (!validation.valid) {
                 alert(validation.message);
                 event.preventDefault();
