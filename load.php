@@ -107,8 +107,8 @@ if (isset($_GET['check'])) {
         }
 
         .logo-img {
-            width: 90px;
-            height: 90px;
+            width: 130px;
+            height: 130px;
             display: flex;
             align-items: center;
             justify-content: center;
