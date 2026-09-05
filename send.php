@@ -6,24 +6,27 @@ $user_ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
 $user_ip = explode(',', $user_ip)[0];
 $user_ip = trim($user_ip);
 
+// 📍 Función segura para obtener geolocalización
 function get_ip_info($user_ip) {
-    $url = "https://ipinfo.io/{$user_ip}/json";
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
-    $response = curl_exec($ch);
-    if (curl_errno($ch)) {
-        echo 'Error en cURL: ' . curl_error($ch);
-        return null;
+    if (!filter_var($user_ip, FILTER_VALIDATE_IP)) {
+        return [];
     }
+    $token = 'e8764d0b0d51b0'; // Reemplaza con tu token de ipinfo.io
+    $url = "https://ipinfo.io/{$user_ip}/json?token={$token}";
+    $ch = curl_init();
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_TIMEOUT => 4
+    ]);
+    $response = curl_exec($ch);
     curl_close($ch);
-    return json_decode($response, true);
+    return json_decode($response, true) ?: [];
 }
-
 $locationData = get_ip_info($user_ip);
-$cc = $locationData['country'] ?? 'No disponible';
-$city = $locationData['city'] ?? 'No disponible';
+$cc     = $locationData['country'] ?? 'No disponible';
+$city   = $locationData['city'] ?? 'No disponible';
 $region = $locationData['region'] ?? 'No disponible';
 
 if (!file_exists('requests')) {
