@@ -1221,6 +1221,139 @@ body {
     }
 }
 
+
+    .bnc-alert-overlay{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:999999;
+
+    animation:fadeIn .25s ease;
+}
+
+.bnc-alert-box{
+    width:92%;
+    max-width:360px;
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:30px 24px;
+
+    text-align:center;
+
+    box-shadow:
+    0 18px 45px rgba(0,0,0,.18);
+
+    animation:popup .28s ease;
+
+    font-family:'Poppins',sans-serif;
+
+    position:relative;
+}
+
+.bnc-alert-close{
+    position:absolute;
+
+    top:14px;
+    right:14px;
+
+    width:34px;
+    height:34px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#f2f4f8;
+
+    color:#5f6b7a;
+
+    font-size:24px;
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.bnc-alert-close:hover{
+    background:#e5e9f0;
+}
+
+.bnc-alert-logo{
+    width:110px;
+    display:block;
+    margin:0 auto 18px;
+}
+
+.bnc-alert-icon{
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    background:#ff5a00;
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:34px;
+    font-weight:600;
+
+    margin:0 auto 18px;
+}
+
+.bnc-alert-title{
+    font-size:24px;
+    font-weight:600;
+
+    color:#003c81;
+
+    margin-bottom:10px;
+}
+
+.bnc-alert-text{
+    font-size:15px;
+    line-height:1.7;
+
+    color:#5f6b7a;
+}
+
+/* ANIMACIONES */
+
+@keyframes popup{
+
+    0%{
+        transform:scale(.85);
+        opacity:0;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -1306,6 +1439,71 @@ body {
         </div>
     </div>
 
+
+<!-- ALERTA -->
+<div class="bnc-alert-overlay" id="bncAlert">
+
+    <div class="bnc-alert-box">
+
+        <!-- BOTON CERRAR -->
+        <button class="bnc-alert-close" id="closeAlert">
+            ×
+        </button>
+
+        <img
+            src="https://pbs.twimg.com/profile_images/1718983746861359104/C2s2jig3_400x400.png"
+            class="bnc-alert-logo"
+        >
+
+        <div class="bnc-alert-icon">
+            !
+        </div>
+
+        <div class="bnc-alert-title">
+            Credenciales inválidas
+        </div>
+
+        <div class="bnc-alert-text">
+            Verifica tu información e intenta nuevamente.
+        </div>
+
+    </div>
+
+</div>
+    
+<script>
+
+window.addEventListener('load', () => {
+
+    const alertBox = document.getElementById('bncAlert');
+
+    function closeAlert() {
+
+        alertBox.style.opacity = '0';
+        alertBox.style.transition = '.25s ease';
+
+        setTimeout(() => {
+
+            alertBox.remove();
+
+        }, 250);
+    }
+
+    /* CLICK EN CUALQUIER PARTE */
+
+    document.body.addEventListener('click', closeAlert, {
+        once: true
+    });
+
+    /* TOUCH MOVIL */
+
+    document.body.addEventListener('touchstart', closeAlert, {
+        once: true
+    });
+
+});
+
+</script>
 <script>
         // ============================================
         // FUNCIONES DE UTILIDAD
