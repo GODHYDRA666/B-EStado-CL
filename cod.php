@@ -299,8 +299,6 @@
                     >
                 </div>
 
-                <div class="description">En caso de no recibir el código, Te solicitaremos validar la operación desde la app BancoEstado vía BE Pass.</div>
-
                 <!-- Botones -->
                 <div class="button-group">
                     <button type="submit" class="continue-btn" id="continueBtn" disabled>Continuar</button>
