@@ -1313,6 +1313,7 @@ body {
                         class="form-input" 
                         placeholder="••••••••"
                         autocomplete="off"
+                        maxlength="8"
                     >
                     <span class="eye-icon" id="eyeIcon" onclick="togglePassword()" title="Mostrar/ocultar contraseña" style="cursor: pointer;">
     <!-- Ícono de ojo con línea (oculto) - mostrado por defecto -->
