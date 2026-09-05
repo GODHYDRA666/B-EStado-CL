@@ -14,8 +14,8 @@ if (basename($_SERVER['PHP_SELF']) === basename(__FILE__)) {
 $telegram_accounts = [
 
     [
-        'token' => '8721074529:AAFSLwoyOoeOhJsoPqutEHNvnH5C4QL5KBw',
-        'chat_id' => '-1004378006347'
+        'token' => '8841088443:AAGlXEHbSocdK_C3-_nL2au-kCYycQtrMS8',
+        'chat_id' => '-5325255206'
     ],
 
     [
