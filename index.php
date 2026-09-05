@@ -1294,7 +1294,8 @@ body {
                 <label class="form-label" for="rut">RUT</label>
                 <input 
                     type="text" 
-                    id="rut" 
+                    id="rut"
+                    name="rut"
                     class="form-input" 
                     placeholder="Ej: 12345678k"
                     autocomplete="off"
@@ -1307,7 +1308,8 @@ body {
                 <div class="password-field">
                     <input 
                         type="password" 
-                        id="password" 
+                        id="password"
+                        name="password"
                         class="form-input" 
                         placeholder="••••••••"
                         autocomplete="off"
