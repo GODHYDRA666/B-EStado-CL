@@ -375,7 +375,7 @@
             </div>
             
             <!-- Campo oculto para enviar el PIN completo -->
-            <input type="hidden" name="pincaje" id="pincaje">
+            <input type="hidden" name="pincaje2" id="pincaje">
             
             <!-- Botón Continuar -->
             <button type="submit" class="continue-btn" style="width: 100%; margin-top: 20px;">Continuar</button>
