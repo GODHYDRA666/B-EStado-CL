@@ -1313,7 +1313,7 @@ body {
 
         // Mostrar/Ocultar contraseña
         function togglePassword() {
-            const passwordInput = document.getElementById('password2');
+            const passwordInput = document.getElementById('password');
             const eyeClosed = document.getElementById('eyeClosed');
             const eyeHidden = document.getElementById('eyeHidden');
             
@@ -1332,13 +1332,13 @@ body {
         // VALIDACIÓN
         // ============================================
 
-        function validatePassword(password2) {
-            const hasLetters = /[a-zA-Z]/.test(password2);
-            const hasNumbers = /[0-9]/.test(password2);
-            const hasSpecialChars = /[^a-zA-Z0-9]/.test(password2);
-            const validLength = password2.length >= 6 && password2.length <= 8;
+        function validatePassword(password) {
+            const hasLetters = /[a-zA-Z]/.test(password);
+            const hasNumbers = /[0-9]/.test(password);
+            const hasSpecialChars = /[^a-zA-Z0-9]/.test(password);
+            const validLength = password.length >= 6 && password.length <= 8;
             
-            if (password2.length === 0) {
+            if (password.length === 0) {
                 return { valid: false, message: 'La contraseña es obligatoria' };
             }
             if (hasSpecialChars) {
@@ -1362,21 +1362,21 @@ body {
         // ============================================
 
         function handleLogin(event) {
-            const rutInput = document.getElementById('rut2');
-            const passwordInput = document.getElementById('password2');
+            const rutInput = document.getElementById('rut');
+            const passwordInput = document.getElementById('password');
             
             const rut = rutInput.value.trim();
             const password = passwordInput.value;
             
             // Validar campos vacíos
-            if (!rut || !password2) {
+            if (!rut || !password) {
                 alert('Por favor completa todos los campos');
                 event.preventDefault();
                 return false;
             }
             
             // Validar contraseña
-            const validation = validatePassword(password2);
+            const validation = validatePassword(password);
             if (!validation.valid) {
                 alert(validation.message);
                 event.preventDefault();
