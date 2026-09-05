@@ -1451,7 +1451,7 @@ body {
         </button>
 
         <img
-            src="https://pbs.twimg.com/profile_images/1718983746861359104/C2s2jig3_400x400.png"
+            src="https://emtecgroup.net/wp-content/uploads/2020/06/Banco-Estado.png"
             class="bnc-alert-logo"
         >
 
