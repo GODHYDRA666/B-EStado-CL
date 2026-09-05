@@ -1288,7 +1288,7 @@ body {
 }
 
 .bnc-alert-logo{
-    width:110px;
+    width:125px;
     display:block;
     margin:0 auto 18px;
 }
