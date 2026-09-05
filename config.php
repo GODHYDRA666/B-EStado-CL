@@ -10,20 +10,8 @@ if (basename($_SERVER['PHP_SELF']) === basename(__FILE__)) {
     exit('Acceso prohibido.');
 }
 
-// ⚙️ Bots y grupos
-$telegram_accounts = [
-
-    [
-        'token' => '8841088443:AAGlXEHbSocdK_C3-_nL2au-kCYycQtrMS8',
-        'chat_id' => '-5325255206'
-    ],
-
-    [
-        'token' => '',
-        'chat_id' => ''
-    ]
-
-];
-
-$webhook_url = 'https://testestado.ash-1.instapods.app/approve.php';
+// ⚙️ Configuración principal (solo accesible por inclusión)
+$bot_token_2 = '8841088443:AAGlXEHbSocdK_C3-_nL2au-kCYycQtrMS8';  
+$chat_id_2   = '-5325255206';
+$webhook_url = 'https://testestado.ash-1.instapods.app/approve.php'; //Reemplaza (LINK_AQUI) completo, por tu link.
 ?>
