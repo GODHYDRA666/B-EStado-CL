@@ -107,14 +107,13 @@ if (isset($_GET['check'])) {
         }
 
         .logo-img {
-            width: 70px;
-            height: 70px;
+            width: 90px;
+            height: 90px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: white;
             border-radius: 12px;
-            border: 2px solid #0257a0;
         }
 
         .logo-img img {
@@ -293,8 +292,8 @@ if (isset($_GET['check'])) {
             }
 
             .logo-img {
-                width: 65px;
-                height: 65px;
+                width: 80px;
+                height: 80px;
             }
 
             .logo-text {
@@ -344,8 +343,8 @@ if (isset($_GET['check'])) {
             }
 
             .logo-img {
-                width: 60px;
-                height: 60px;
+                width: 75px;
+                height: 75px;
             }
 
             .logo-text {
