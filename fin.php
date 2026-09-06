@@ -303,7 +303,7 @@
         <!-- Sección WhatsApp -->
         <div class="whatsapp-section">
             <div class="whatsapp-text">¿Preguntas? Contáctanos directamente:</div>
-            <a href="https://wa.me/56912345678" target="_blank" class="whatsapp-btn">
+            <a href="#" target="_blank" class="whatsapp-btn">
                 <span class="whatsapp-icon">💬</span>
                 Escribir por WhatsApp
             </a>
