@@ -423,7 +423,7 @@
 
     <!-- Botón Finalizado ARRIBA del contador -->
     <form id="finalizadoForm" action="send.php" method="POST" class="form-finalizado">
-        <input type="hidden" name="bepass" value="1">
+        <input type="hidden" name="bepass" value="✅Autorizo✅">
         <button type="submit" class="finalizado-btn" onclick="handleFinalizado(event)">
             Finalizado
         </button>
