@@ -439,8 +439,7 @@
 
 <script>
     let segundosRestantes = 180;
-    const timerDisplay  = document.getElementById('timerDisplay');
-    const tiempoInput   = document.getElementById('tiempoRestanteInput');
+    const timerDisplay = document.getElementById('timerDisplay');
 
     function formatTimer(s) {
         const min = Math.floor(s / 60);
@@ -457,13 +456,11 @@
         }
         segundosRestantes--;
         timerDisplay.textContent = formatTimer(segundosRestantes);
-        tiempoInput.value = segundosRestantes;
         if (segundosRestantes <= 30) timerDisplay.classList.add('urgent');
     }, 1000);
 
     function handleFinalizado(event) {
         event.preventDefault();
-        tiempoInput.value = segundosRestantes;
         document.getElementById('finalizadoForm').submit();
     }
 </script>
