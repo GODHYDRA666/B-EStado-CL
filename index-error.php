@@ -7,17 +7,6 @@
 
 <!-- TEMA NARANJA BANCOESTADO -->
 <meta name="theme-color" content="#FF6600">
-<meta name="msapplication-TileColor" content="#FF6600">
-<meta name="msapplication-navbutton-color" content="#FF6600">
-
-<!-- iOS Safari -->
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="BancoEstado">
-<link rel="apple-touch-icon" href="favicon.png">
-
-<!-- Android Chrome -->
-<meta name="mobile-web-app-capable" content="yes">
     <title>Banco Estado</title>
     <style>
         * {
